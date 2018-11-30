@@ -69,7 +69,7 @@ function processTxns(inputTxns) {
         itemMonth = moment.unix(item.time).utc().month();
         itemYear = moment.unix(item.time).utc().year();
         if (((includeSend && (item.category == 'send')) || (includeReceive && (item.category == 'receive'))) &&
-            (monthScreen &&(year == itemYear) && (month == itemMonth)))
+            (!monthScreen ||(monthScreen &&(year == itemYear) && (month == itemMonth))))
         {
             _.forIn(outputLayout, function (value, key, object)
             {
@@ -174,28 +174,14 @@ if (monthScreen == 'current') {
 // Get the bitcoin configuration
 const sourcePath = '/root/.bitcoin/bitcoin.conf';
 let bitcoinConfig = envfile.parseFileSync(sourcePath);
-console.log(bitcoinConfig);
 
 // Connect to bitcoind
 let btcURL = `http://${bitcoinConfig.rpcuser}:${bitcoinConfig.rpcpassword}@localhost:8332`;
-console.log('siging in to: ', btcURL)
 let btc = new bitcoinRpc(btcURL);
-
-// get and print balance
-btc.getbalance().then(result => {
-    console.log('balance: ',result);
-});
 
 //get the transactions
 btc.listtransactions('*', 100000)
     .then(result => {
         processTxns(result)
-        console.log('get the blocktime', result[0].blocktime);
     }).catch(error => console.log('listtransactions failed: ', error))
-
-
-// Development application code
-console.log('Hello, Eric');
-console.log(argv);
-console.log('month: ', month, '  year: ', year, '  monthScreen: ', monthScreen);
 
