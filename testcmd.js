@@ -24,7 +24,7 @@ btc.getbalance().then(result => {
 });
 
 //get 10 transactions
-btc.listtransactions('', 10)
+btc.listtransactions('*', 10)
     .then(result => {
         console.log(result);
     }).catch(error => console.log('listtransactions failed: ', error))
