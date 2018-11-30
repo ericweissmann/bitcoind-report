@@ -24,11 +24,9 @@ btc.getbalance().then(result => {
 });
 
 //get 10 transactions
-btc.listtransactions('',10).then(result => {
-    console.log(result);
-})
+btc.listtransactions('', 10)
+    .then(result => {
+        console.log(result);
+    }).catch(error => console.log('listtransactions failed: ', error))
 // console.log(fs.readFileSync('/root/.bitcoin/bitcoin.conf').toString());
 
-// get config file & display
-// parse config file
-// connect to bitcoind & display balance
