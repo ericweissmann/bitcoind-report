@@ -6,3 +6,6 @@ Use
 bitcoind-report -h
 ```
 to see a list of the available options.
+
+The start and end of the month are determined with reference to UTC, not local time.
+
