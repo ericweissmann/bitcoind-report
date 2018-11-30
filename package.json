@@ -14,5 +14,8 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "yargs": "^12.0.5"
+  },
+  "bin": {
+    "bitcoind-report": "./bitcoind-report.js"
   }
 }
