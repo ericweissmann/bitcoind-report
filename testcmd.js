@@ -22,6 +22,11 @@ let btc = new bitcoinRpc(btcURL);
 btc.getbalance().then(result => {
     console.log(result);
 });
+
+//get 10 transactions
+btc.listtransactions('',10).then(result => {
+    console.log(result);
+})
 // console.log(fs.readFileSync('/root/.bitcoin/bitcoin.conf').toString());
 
 // get config file & display
