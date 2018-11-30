@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 const envfile = require('envfile');
-const BitcoinRpc = require('bitcoin-rpc-promise');
+const bitcoinRpc = require('bitcoin-rpc-promise');
 
 
 // Get the bitcoin configuration
@@ -14,7 +14,9 @@ console.log(bitcoinConfig);
 console.log("hello Mr. eric");
 
 // Connect to bitcoind
-let btc = new BitcoinRpc(`http://${bitcoinConfig.rpcuser}:${bitcoinConfig.rpcpassword}@localhost:8332`);
+let btcURL = `http://${bitcoinConfig.rpcuser}:${bitcoinConfig.rpcpassword}@localhost:8332`;
+console.log('siging in to: ', btcURL)
+let btc = new bitcoinRpc(btcURL);
 
 // get and print balance
 btc.getbalance().then(result => {
