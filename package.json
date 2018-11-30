@@ -10,6 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "bitcoin-rpc-promise": "^2.1.6",
-    "envfile": "^2.3.0"
+    "envfile": "^2.3.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "yargs": "^12.0.5"
   }
 }
