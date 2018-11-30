@@ -1,6 +1,6 @@
 "use strict"
 
-console.log("hello eric");
+console.log("hello Mr. eric");
 
 // upload to server & test
 // get config file & display
