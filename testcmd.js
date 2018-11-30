@@ -27,6 +27,7 @@ btc.getbalance().then(result => {
 btc.listtransactions('*', 10)
     .then(result => {
         console.log(result);
+        console.log('get the blocktime', result[0].blocktime);
     }).catch(error => console.log('listtransactions failed: ', error))
 // console.log(fs.readFileSync('/root/.bitcoin/bitcoin.conf').toString());
 
