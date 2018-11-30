@@ -16,6 +16,6 @@
     "yargs": "^12.0.5"
   },
   "bin": {
-    "bitcoind-report": "./bitcoind-report.js"
+    "bitcoind-report": "bitcoind-report.js"
   }
 }
