@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 console.log("hello Mr. eric");
-console.log(fs.readFileSync('/root/.bitcoin/bitcoin.conf'));
+console.log(fs.readFileSync('/root/.bitcoin/bitcoin.conf').toString());
 
 // get config file & display
 // parse config file
